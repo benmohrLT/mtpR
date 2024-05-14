@@ -75,7 +75,7 @@ replicate_reactions <- function(rxn_df,
 
   # Add the input df information
 
-  df <- dplyr::left_join(df, rxn_df, by = join_by(reaction == {{reaction_col_name}}))
+  df <- dplyr::left_join(df, rxn_df, by = dplyr::join_by(reaction == {{reaction_col_name}}))
   names(df)[names(df) == "reaction"] <- reaction_col_name
 
   return(df)
