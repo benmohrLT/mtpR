@@ -53,10 +53,11 @@ to_rows_columns <- function(wells, well_id) {
 #'
 #' @return Data frame with added `Plate.Index` indicating plate number
 #'         and renumbered `Well.Index` within each plate.
+#' @export
 #' @importFrom dplyr mutate select across
 #' @examples
 #' reaction_data <- data.frame(Well.Index = 1:96)
-#' updated_data <- addPlates(reaction_data, "Well.Index", 96)
+#' updated_data <- add_plates(reaction_data, "Well.Index", 96)
 
 add_plates <- function(df, well_index_column, plate_size) {
   if (!is.character(well_index_column) || length(well_index_column) != 1) {

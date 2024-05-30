@@ -4,16 +4,21 @@
 \alias{readPlate}
 \title{Read Plates}
 \usage{
-readPlate(dat = SamplePlateData, plate.size = 96)
+readPlate(dat, plate.size = 96)
 }
 \arguments{
 \item{dat}{A data frame containing plate shaped data with Column names and Row names based on plate shape}
 
-\item{Plate.Size}{The size of plate for this set of wells}
+\item{plate.size}{The size of plate for this set of wells}
 }
 \value{
 A data frame with two columns (wells and values) representing the resulting data loaded in a long format
 }
 \description{
 Read Plates
+}
+\examples{
+SamplePlateData <- readRDS(system.file("extdata", "SamplePlateShapedData.rds", package = "mtpR"))
+readPlate(SamplePlateData, plate.size = 96)
+
 }

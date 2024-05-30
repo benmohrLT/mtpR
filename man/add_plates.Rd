@@ -22,5 +22,5 @@ Renumber wells across multiple plates
 }
 \examples{
 reaction_data <- data.frame(Well.Index = 1:96)
-updated_data <- addPlates(reaction_data, "Well.Index", 96)
+updated_data <- add_plates(reaction_data, "Well.Index", 96)
 }

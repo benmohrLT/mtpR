@@ -15,18 +15,20 @@ replicate_reactions(
 )
 }
 \arguments{
+\item{rxn_df}{A df of reactions.}
+
+\item{reaction_col_name}{The column of unique reaction identifiers to be replicated.}
+
 \item{num_replicates}{The number of times each reaction should be replicated.}
 
-\item{priority}{The priority for positioning: "reaction" for reaction-first ordering,
-or "replicate" for replicate-first ordering.}
+\item{priority}{The priority for positioning: "Reaction" for reaction-first ordering,
+or "Replicate" for replicate-first ordering.}
 
 \item{inter_spacing}{The numeric distance between the sets, either different reactions or replicates.}
 
 \item{intra_spacing}{The numeric distance between replicates within a set.}
 
 \item{start_position}{The starting numeric position for the first entry.}
-
-\item{reactions_vector}{A vector of unique reaction identifiers to be replicated.}
 }
 \value{
 A data frame with the columns 'reaction', 'replicate', and 'position'.
@@ -38,9 +40,9 @@ assigns a unique numeric position to each reaction based on the specified orderi
 }
 \examples{
 data <- data.frame(rxn = 1:3)
-data <- replicate_reactions(data, "rxn", num_replicates = 3, priority = "reaction",
+data <- replicate_reactions(data, "rxn", num_replicates = 3, priority = "Reaction",
                             inter_spacing = 10, intra_spacing = 1, start_position = 1)
-data <- replicate_reactions(data, "rxn", num_replicates = 3, priority = "replicate",
+data <- replicate_reactions(data, "rxn", num_replicates = 3, priority = "Replicate",
                             inter_spacing = 5, intra_spacing = 1, start_position = 1)
 
 }

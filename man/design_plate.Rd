@@ -2,10 +2,12 @@
 % Please edit documentation in R/plate_designer.R
 \name{design_plate}
 \alias{design_plate}
-\title{R Shiny App to Design Plate formats}
+\title{R Shiny App to Design Plate Formats}
 \usage{
 design_plate()
 }
 \description{
-R Shiny App to Design Plate formats
+This function creates a Shiny application for designing microtiter plate formats.
+The application allows users to set up various parameters for plate design and
+generates a destination plate map as output.
 }

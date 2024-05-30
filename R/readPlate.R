@@ -1,17 +1,20 @@
 #' Read Plates
 #'
 #' @param dat A data frame containing plate shaped data with Column names and Row names based on plate shape
-#' @param Plate.Size The size of plate for this set of wells
+#' @param plate.size The size of plate for this set of wells
 #'
 #' @return A data frame with two columns (wells and values) representing the resulting data loaded in a long format
+#' @examples
+#' SamplePlateData <- readRDS(system.file("extdata", "SamplePlateShapedData.rds", package = "mtpR"))
+#' readPlate(SamplePlateData, plate.size = 96)
+#'
 #' @export
 
 
-readPlate <- function(dat = SamplePlateData, plate.size = 96){
+readPlate <- function(dat, plate.size = 96){
 
 # Evaluating plate size to know how to split
-  mtpR::platesize.check(plate.size) -> plate.size.df
-
+  mtpR::platesize_check(plate.size) -> plate.size.df
 
  # Check for row names
   if (stringr::str_detect((toString(dat[1])), "[[:alpha:]]*")) {
